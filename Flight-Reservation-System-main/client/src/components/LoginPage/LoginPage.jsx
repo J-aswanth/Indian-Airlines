@@ -10,16 +10,17 @@ const LoginPage = ({ setShowLogin }) => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [isUserSignInValid, setIsUserSignInValid] = useState(false);
+  const [isChecked, setIsChecked] = useState(false); // State for checkbox
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (userName && userEmail && password) {
+    if (userName && userEmail && password && isChecked) { // Include isChecked in the condition
       setIsUserSignInValid(true);
     } else {
       setIsUserSignInValid(false);
     }
-  }, [userName, userEmail, password]);
-
+  }, [userName, userEmail, password, isChecked]);
   
 
   const switchToAdminLogin = () => {
@@ -73,6 +74,9 @@ const LoginPage = ({ setShowLogin }) => {
     navigate("/searchflights");
   };
 
+const handleCheckboxChange = () => {
+    setIsChecked(!isChecked); // Toggle checkbox state
+  };
 
   
 
@@ -98,18 +102,22 @@ const LoginPage = ({ setShowLogin }) => {
           }
         </div>
 
+
+          {currState === "Admin Login" ? <></> :
+          <div className="condition">
+            <input type="checkbox"  checked={isChecked} onChange={handleCheckboxChange} required />
+            <p>By continuing, I agree to the terms of use & privacy policy.</p>
+          </div>
+        }
+        
+
         {currState === 'User SignIn' ? 
           <button type="submit" onClick={handleUserSignIn} disabled={!isUserSignInValid}>Sign In</button> 
           : 
           <button type="submit" onClick={handleAdminLogin}>Login</button>
         }
 
-        {currState === "Admin Login" ? <></> :
-          <div className="condition">
-            <input type="checkbox" required />
-            <p>By continuing, I agree to the terms of use & privacy policy.</p>
-          </div>
-        }
+      
 
         {currState === "Admin Login" ?
           <p> Are you a User? <span onClick={switchToUserSignIn}>Sign In Here</span></p>
