@@ -59,13 +59,16 @@ const SearchFlights = () => {
             onChange={(e) => setSearchSource(e.target.value)}
           >
             <option value="">Search Source</option>
-            <option value="Lahore, Pakistan">Lahore, Pakistan</option>
-            <option value="London, United Kingdom">London, United Kingdom</option>
-            <option value="Toronto, Canada">Toronto, Canada</option>
-            <option value="Tokyo, Japan">Tokyo, Japan</option>
-            <option value="Delhi, India">Delhi, India</option>
-            <option value="Istanbul, Turkey">Istanbul, Turkey</option>
-            <option value="Islamabad, Pakistan">Islamabad, Pakistan</option>
+           <option value="Vishakapatnam ">Vishakapatnam </option>
+
+                <option value="Guwahati">Guwahati</option>
+
+                <option value="Chennai ">Chennai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Varanasi">Varanasi</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Kolkata ">Kolkata</option>
           </Form.Select>
         </Col>
         <Col className="col-6">
@@ -74,13 +77,18 @@ const SearchFlights = () => {
             onChange={(e) => setSearchDest(e.target.value)}
           >
             <option value="">Search Destination</option>
-            <option value="London, United Kingdom">London, United Kingdom</option>
-            <option value="Lahore, Pakistan">Lahore, Pakistan</option>
-            <option value="Toronto, Canada">Toronto, Canada</option>
-            <option value="Tokyo, Japan">Tokyo, Japan</option>
-            <option value="Delhi, India">Delhi, India</option>
-            <option value="Istanbul, Turkey">Istanbul, Turkey</option>
-            <option value="Islamabad, Pakistan">Islamabad, Pakistan</option>
+          <option value="Bengaluru">Bengaluru</option>
+
+              <option value="Guwahati">Guwahati</option>
+
+              <option value="Chennai ">Chennai</option>
+
+              <option value="Vishakapatnam ">Vishakapatnam </option>
+
+              <option value="Varanasi">Varanasi</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Kolkata ">Kolkata</option>
           </Form.Select>
         </Col>
       </Row>
