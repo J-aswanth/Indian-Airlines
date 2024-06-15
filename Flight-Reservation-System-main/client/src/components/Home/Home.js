@@ -1,5 +1,4 @@
 import { Button } from "react-bootstrap";
-import NavBar from "../NavBar/NavBar";
 import "./Home.css";
 import img from "./bg.jpg";
 
@@ -7,7 +6,14 @@ const Home = ({setShowLogin}) => {
   return (
     <div className="home-body">
       <div className="container">
-        <NavBar />
+    
+       <nav className="navbar navbar-expand-lg navbar-light ">
+         <a className="navbar-brand" href="/">
+            <span className="fast">INDIAN </span>{" "}
+            <span className="airlines">AIRLINES</span>
+        </a>
+      </nav>  
+      <hr/>
        
         <div className="row mt-5">
           <div className="col col-6 mt-5">
