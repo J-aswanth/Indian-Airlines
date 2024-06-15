@@ -9,7 +9,18 @@ const LoginPage = ({ setShowLogin }) => {
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [isUserSignInValid, setIsUserSignInValid] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userName && userEmail && password) {
+      setIsUserSignInValid(true);
+    } else {
+      setIsUserSignInValid(false);
+    }
+  }, [userName, userEmail, password]);
+
+  
 
   const switchToAdminLogin = () => {
     setAdminId("");
@@ -50,8 +61,20 @@ const LoginPage = ({ setShowLogin }) => {
         
       });
 
+    }else {
+      alert("Login failed. Please check your credentials.");
     }
-  }
+  };
+
+
+  const handleUserSignIn = async (event) => {
+    event.preventDefault();
+    setShowLogin(false);
+    navigate("/searchflights");
+  };
+
+
+  
 
   return (
     <div className='login-popup'>
@@ -75,7 +98,11 @@ const LoginPage = ({ setShowLogin }) => {
           }
         </div>
 
-        {currState === 'User SignIn' ? <button>Sign In</button> : <button onClick={loginUser}>Login</button>}
+        {currState === 'User SignIn' ? 
+          <button type="submit" onClick={handleUserSignIn} disabled={!isUserSignInValid}>Sign In</button> 
+          : 
+          <button type="submit" onClick={handleAdminLogin}>Login</button>
+        }
 
         {currState === "Admin Login" ? <></> :
           <div className="condition">
