@@ -62,9 +62,9 @@ app.post("/addflight", async (req, res) => {
     startTime: startTime,
     seats: seats,
     totalTime: totalTime,
-    economyPrice: totalTime * 75,
-    businessPrice: totalTime * 175,
-    firstClassPrice: totalTime * 325,
+    economyPrice: totalTime * 75*40,
+    businessPrice: totalTime * 175*40,
+    firstClassPrice: totalTime * 325*40,
     noOfPassengers: 0,
   });
 });
@@ -195,9 +195,9 @@ app.post("/updateflight", async (req, res) => {
       startTime: req.body.startTime,
       seats: req.body.seats,
       totalTime: req.body.totalTime,
-      economyPrice: req.body.totalTime * 75,
-      businessPrice: req.body.totalTime * 175,
-      firstClassPrice: req.body.totalTime * 325,
+      economyPrice: req.body.totalTime * 75*40,
+      businessPrice: req.body.totalTime * 175*40,
+      firstClassPrice: req.body.totalTime * 325*40,
     },
     function (err) {
       if (err) return handleError(err);
