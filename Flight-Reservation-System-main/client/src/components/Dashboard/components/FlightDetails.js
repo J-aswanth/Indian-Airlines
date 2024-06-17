@@ -60,11 +60,11 @@ const FlightDetails = () => {
               <div>
                 <text>
                  
-                  <b>Economy price</b> : $ {flight.economyPrice}
+                  <b>Economy price</b> : ₹  {flight.economyPrice}
                   <br />
-                  <b>Business price</b> : $ {flight.businessPrice}
+                  <b>Business price</b> :  ₹ {flight.businessPrice}
                   <br />
-                  <b>First class price</b> : $ {flight.firstClassPrice}
+                  <b>First class price</b> : ₹  {flight.firstClassPrice}
                 </text>
               </div>
             </div>
