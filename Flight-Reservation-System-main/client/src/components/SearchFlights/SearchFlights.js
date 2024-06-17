@@ -123,7 +123,7 @@ const SearchFlights = () => {
                   <div className="col-3">
                     <div className="price-outer-div">
                       <div className="price">
-                        Price starting from: <b>${flight.economyPrice}</b>
+                        Price starting from: <b> ₹ {flight.economyPrice}</b>
                       </div>
                     </div>
                   </div>
